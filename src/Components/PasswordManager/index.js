@@ -85,7 +85,6 @@ class PasswordManager extends Component {
 
   render() {
     const {
-      count,
       website,
       username,
       password,
@@ -114,21 +113,23 @@ class PasswordManager extends Component {
                 type="input"
                 placeholder="Enter Website"
                 onChange={this.onChangeWebsiteName}
+                value={website}
               />
             </div>
             <div className="website-input">
               <img alt="username" />
               <input
                 type="input"
-                placeholder="Enter Website"
+                placeholder="Enter Username"
                 onChange={this.onChangeUsername}
+                value={username}
               />
             </div>
             <div className="website-input">
               <img alt="password" />
               <input
                 type="password"
-                placeholder="Enter Website"
+                placeholder="Enter Password"
                 onChange={this.onChangePassword}
                 value={password}
               />
@@ -148,7 +149,11 @@ class PasswordManager extends Component {
               src="https://assets.ccbp.in/frontend/react-js/password-manager-search-img.png"
               alt="search"
             />
-            <input type="search" onChange={this.onChangeSearchInput} />
+            <input
+              type="search"
+              onChange={this.onChangeSearchInput}
+              placeholder="Search"
+            />
           </div>
         </div>
         <hr />
