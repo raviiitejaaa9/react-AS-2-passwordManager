@@ -1,11 +1,12 @@
 import {Component} from 'react'
+import {v4 as uuidv4} from 'uuid'
+
 import PasswordItem from '../PasswordItem'
 
 import './index.css'
 
 class PasswordManager extends Component {
   state = {
-    count: 0,
     website: '',
     username: '',
     password: '',
@@ -18,13 +19,24 @@ class PasswordManager extends Component {
     event.preventDefault()
     console.log('submit triggered')
     const {website, username, password} = this.state
+    const id = uuidv4()
 
     this.setState(prevState => ({
       passwordsList: [
         ...prevState.passwordsList,
-        {website, username, password},
+        {website, username, password, id},
       ],
+      website: '',
+      username: '',
+      password: '',
     }))
+
+    this.setState({
+      website: '',
+      username: '',
+      password: '',
+    })
+
     // const websiteName = this.onChangeWebsiteName()
     // console.log(websiteName)
   }
@@ -57,14 +69,18 @@ class PasswordManager extends Component {
   }
 
   onFilteredList = (passwordsList, searchInput) => {
-    const filteredList = passwordsList.filter(
-      eachPassword => searchInput in eachPassword.website,
+    const filteredList = passwordsList.filter(eachPassword =>
+      eachPassword.website.includes(searchInput),
     )
     return filteredList
   }
 
-  onDeletePasswordItem = id => {
-    console.log('delete triggrerd')
+  onDeletePasswordItem = delId => {
+    // console.log('delete triggered')
+    console.log(delId)
+    const {passwordsList} = this.state
+    const newList = passwordsList.filter(eachItem => eachItem.id !== delId)
+    this.setState({passwordsList: [...newList]})
   }
 
   render() {
@@ -82,7 +98,7 @@ class PasswordManager extends Component {
     const noOfPasswords = passwordsList.length
 
     console.log(searchInput)
-    // const filteredList = this.onFilteredList(passwordsList, searchInput)
+    const filteredList = this.onFilteredList(passwordsList, searchInput)
 
     // console.log(showPassword)
     // console.log(filteredList)
@@ -114,6 +130,7 @@ class PasswordManager extends Component {
                 type="password"
                 placeholder="Enter Website"
                 onChange={this.onChangePassword}
+                value={password}
               />
             </div>
 
@@ -144,11 +161,12 @@ class PasswordManager extends Component {
           <label htmlFor="showPasswords"> Show Passwords </label>
         </div>
 
-        {passwordsList.map(eachItem => (
+        {filteredList.map(eachItem => (
           <PasswordItem
             passwordState={showPassword}
             details={eachItem}
             onDeletePasswordItem={this.onDeletePasswordItem}
+            key={eachItem.id}
           />
         ))}
       </div>

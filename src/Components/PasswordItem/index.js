@@ -4,7 +4,7 @@ const PasswordItem = props => {
   const {passwordState, details, onDeletePasswordItem} = props
   console.log(passwordState)
 
-  const {website, username, password} = details
+  const {website, username, password, id} = details
 
   console.log(website)
 
@@ -18,7 +18,7 @@ const PasswordItem = props => {
   )
 
   const onClickDelete = () => {
-    onDeletePasswordItem(website)
+    onDeletePasswordItem(id)
   }
 
   return (
