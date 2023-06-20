@@ -1,0 +1,39 @@
+.password-item-card {
+  height: 130px;
+  width: 260px;
+  background-color: transparent;
+  border: 2px #b6c3ca solid;
+  border-radius: 13px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5px;
+  list-style-type: none;
+}
+
+.details {
+  color: whitesmoke;
+  font-size: 20px;
+}
+
+.password-icon {
+  background-color: green;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-icon {
+  width: 15px;
+  height: 20px;
+}
+
+.stars-img {
+  width: 100px;
+  height: 20px;
+}

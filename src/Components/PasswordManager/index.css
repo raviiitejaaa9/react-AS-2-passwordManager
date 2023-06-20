@@ -1,0 +1,145 @@
+.body {
+  margin: 0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app-container {
+  padding: 10px;
+  background-color: #9ba9eb;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.app-logo {
+  width: 200px;
+  align-self: flex-start;
+}
+
+.form-card-sec {
+  background-color: #5763a5;
+  border: 1px whitesmoke solid;
+  border-radius: 10px;
+  width: 80%;
+  height: 45%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form {
+  background-color: #454f84;
+  height: 90%;
+  width: 40%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.form-head {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.form-icons {
+  height: 26px;
+  width: 20px;
+  background-color: whitesmoke;
+  border: none;
+  border-right: 1px whitesmoke solid;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+
+.form-input-el {
+  height: 26px;
+  width: 280px;
+  outline: none;
+  border: none;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  padding: 10px;
+}
+
+.website-input {
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.password-manager-img {
+  width: 300px;
+  height: 300px;
+}
+
+.form-btn {
+  background-color: blue;
+  border: none;
+  width: 80px;
+  align-self: flex-end;
+  color: white;
+  height: 22px;
+  border-radius: 10px;
+}
+
+.passwords-sec {
+  background-color: #5763a5;
+  border: 1px whitesmoke solid;
+  border-radius: 10px;
+  width: 80%;
+  height: 45%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.passwords-top-sec {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.passwords-count-sec {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+}
+
+.show-passwords {
+  align-self: flex-end;
+}
+
+.password-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+.hr-el {
+  width: 100%;
+}
+
+.passwords-sec-img {
+  width: 50%;
+  height: 60%;
+}
