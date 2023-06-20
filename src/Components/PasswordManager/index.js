@@ -70,7 +70,7 @@ class PasswordManager extends Component {
 
   onFilteredList = (passwordsList, searchInput) => {
     const filteredList = passwordsList.filter(eachPassword =>
-      eachPassword.website.includes(searchInput),
+      eachPassword.website.toLowerCase().includes(searchInput.toLowerCase()),
     )
     return filteredList
   }
@@ -116,7 +116,20 @@ class PasswordManager extends Component {
       </div>
     )
 
-    const passwordItemSec = isEmpty ? passwordsEmptySec : null
+    const passwordItemsSec = (
+      <ul className="password-items">
+        {filteredList.map(eachItem => (
+          <PasswordItem
+            passwordState={showPassword}
+            details={eachItem}
+            onDeletePasswordItem={this.onDeletePasswordItem}
+            key={eachItem.id}
+          />
+        ))}
+      </ul>
+    )
+
+    const passwordItemSec = isEmpty ? passwordsEmptySec : passwordItemsSec
 
     return (
       <div className="app-container">
@@ -171,7 +184,7 @@ class PasswordManager extends Component {
               />
             </div>
 
-            <button data-testid="delete" type="submit" className="form-btn">
+            <button type="submit" className="form-btn">
               {' '}
               Add{' '}
             </button>
@@ -217,16 +230,6 @@ class PasswordManager extends Component {
             <label htmlFor="showPasswords"> Show Passwords </label>
           </div>
           {passwordItemSec}
-          <ul className="password-items">
-            {filteredList.map(eachItem => (
-              <PasswordItem
-                passwordState={showPassword}
-                details={eachItem}
-                onDeletePasswordItem={this.onDeletePasswordItem}
-                key={eachItem.id}
-              />
-            ))}
-          </ul>
         </div>
       </div>
     )

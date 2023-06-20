@@ -37,3 +37,17 @@
   width: 100px;
   height: 20px;
 }
+
+/*
+<ul className="password-items">
+            {filteredList.map(eachItem => (
+              <PasswordItem
+                passwordState={showPassword}
+                details={eachItem}
+                onDeletePasswordItem={this.onDeletePasswordItem}
+                key={eachItem.id}
+              />
+            ))}
+          </ul>
+
+*/
