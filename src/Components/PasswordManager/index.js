@@ -106,13 +106,13 @@ class PasswordManager extends Component {
     console.log(isEmpty)
 
     const passwordsEmptySec = (
-      <div>
+      <div className="empty-sec">
         <img
           src=" https://assets.ccbp.in/frontend/react-js/no-passwords-img.png  "
           alt="no passwords"
-          className="password-sec-img"
+          className="passwords-sec-img"
         />
-        <p className="form-head"> No Passwords </p>
+        <p className="passwords-sec-head"> No Passwords </p>
       </div>
     )
 
@@ -189,7 +189,7 @@ class PasswordManager extends Component {
         <div className="passwords-sec">
           <div className=" passwords-top-sec ">
             <div className="passwords-count-sec">
-              <h1 className="form-head"> Your Passwords </h1>
+              <h1 className="passwords-sec-head"> Your Passwords </h1>
               <p> {noOfPasswords} </p>
             </div>
 
@@ -207,9 +207,7 @@ class PasswordManager extends Component {
               />
             </div>
           </div>
-
           <hr className="hr-el" />
-
           <div className="show-passwords">
             <input
               type="checkbox"
@@ -218,9 +216,8 @@ class PasswordManager extends Component {
             />
             <label htmlFor="showPasswords"> Show Passwords </label>
           </div>
-
+          {passwordItemSec}
           <ul className="password-items">
-            {passwordItemSec}
             {filteredList.map(eachItem => (
               <PasswordItem
                 passwordState={showPassword}
